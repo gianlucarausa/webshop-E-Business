@@ -10,8 +10,7 @@
             <!--Datenbank API (Login / Warenkorb)-->
             <div id="buttons" class="text-white col-4 pe-4 d-flex justify-content-end">
                 <button class="text-white btn">Login <i class="fs-5 bi bi-box-arrow-in-right"></i></button>
-                <button class="text-white btn" data-bs-toggle="offcanvas" data-bs-target="#checkout-canvas"
-                    href="#">Warenkorb <i class="fs-5 bi bi-cart2"></i></button>
+                <a class="text-white btn" href="cart.php">Warenkorb <i class="fs-5 bi bi-cart2"></i></a>
             </div>
         </div>
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">

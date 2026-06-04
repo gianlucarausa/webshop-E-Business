@@ -1,10 +1,27 @@
-
+<?php 
+include("../webshop/config/db.php");
+if(isset($_GET['category'])){
+    if($_GET['category'] == "all"){
+    $categoryTitel = "Gesamte Karte";
+    $category = "Kategorie"; //das ist um später einfach einen Select * From Kategorie machen zu können
+    } else if($_GET['category'] == 1){
+        $categoryTitel = "Zu Trinken";
+        $category = $_GET['category'];
+    } else if($_GET['category'] == 2 ){
+        $categoryTitel = "Zu Essen";
+        $category = $_GET['category'];
+    }
+    
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Kategorie | </title>
+    <?php 
+    echo("<title>Kategorie | $categoryTitel</title>")
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP-Webshop für Essen mit hoher Qualitaet">

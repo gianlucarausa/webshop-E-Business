@@ -1,8 +1,9 @@
 <?php
+    include "../includes/session_check.php";
     include '../webshop/config/db.php';
 
-    $kundId= $_SESSION["id"];
-    $prodId= $_POST["produktId"];
+    $kundId= $_SESSION["user_id"];
+    $prodId= $_POST["productId"];
 
     $query = "INSERT INTO Warenkorb (kundeid, produktid) VALUES (?,?)";
     $statement = $mysqli->prepare($query);

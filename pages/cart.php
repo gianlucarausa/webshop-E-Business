@@ -1,3 +1,6 @@
+<?php
+    include "../includes/session_check.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +59,13 @@
             print("</tr>"); 
         }
 
-        print("</table>");  
+        print("</table>");
+        print('<form action="./index.php" method="GET">
+                    <button type="submit" class="btn btn-secondary btn-sm">Weiter Einkaufen</button>
+                </form>
+                <form action="./payment.php" method="GET">
+                    <button type="submit" class="btn btn-success btn-lg">Bezahlen</button>
+                </form>')  
         ?>
 
     </main>

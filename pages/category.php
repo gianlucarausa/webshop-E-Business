@@ -1,4 +1,5 @@
-<?php 
+<?php
+include("../includes/session_check.php"); 
 $type = "";
 $category = "";
 $categoryTitel = "";

@@ -1,5 +1,9 @@
 <?php
     include "../includes/session_check.php";
+
+    if(!isLoggedIn()) {
+        header("location: ./index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

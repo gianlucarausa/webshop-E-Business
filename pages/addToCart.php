@@ -2,6 +2,10 @@
     include "../includes/session_check.php";
     include '../webshop/config/db.php';
 
+    if(!isLoggedIn()) {
+        header("location: ./index.php");
+    }
+    
     $kundId= $_SESSION["user_id"];
     $prodId= $_POST["productId"];
 

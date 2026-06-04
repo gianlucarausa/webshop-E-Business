@@ -38,7 +38,7 @@
 
         print("<h2>Willkommen im Warenkorb " . $username ."</h2><br><p>Artikel im Warenkorb</p>");
 
-        $query = "SELECT p.bezeichnung, p.preis FROM Warenkorb w, Produkt p WHERE w.kundeid=? AND w.produktid = p.id";
+        $query = "SELECT p.bezeichnung, p.preis, w.id FROM Warenkorb w, Produkt p WHERE w.kundeid=? AND w.produktid = p.id ORDER BY w.id";
         $statement = $mysqli->prepare($query);
         $statement->bind_param("i", $userId);
         $statement->execute();
@@ -58,7 +58,12 @@
             print($row->bezeichnung);
             print("</td>");
             print("<td>");
-            print($row->preis);
+            print($row->preis." €");
+            print("</td>");
+            print("<td>");
+            print("<form action=\"./deleteFromCart.php\" method=\"POST\">
+                    <button type=\"submit\" name=\"cart_id\" value=\"$row->id\" class=\"btn btn-danger btn-lg\">x</button>
+                </form>");
             print("</td>");
             print("</tr>"); 
         }

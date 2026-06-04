@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS Warenkorb (
     CONSTRAINT fk_produkt FOREIGN KEY (produktid) REFERENCES Produkt(id)
 );
 
---Insert Befehle Kategorie
+-- Insert Befehle Kategorie
 INSERT IGNORE INTO Kategorie VALUES (1, null, 'Getraenke');
 INSERT IGNORE INTO Kategorie VALUES (2, null, 'Essen');
 INSERT IGNORE INTO Kategorie VALUES (3, 1, 'Mate');

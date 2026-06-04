@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +67,18 @@
     </header>
     <!--Main-->
     <main class="col-12 bg-light">
-        <i>// Hier Content</i>
+        <?php 
+        include("../webshop/config/db.php");
+        $sql = "Select * From Produkt";
+        $statement = $mysqli->prepare($sql);
+        $statement-> execute();
+        $result = $statement->get_result();
+
+        while($row = $result->fetch_object()){
+        echo("<a>".$row->bezeichnung."<a/>");
+        }
+
+    ?>
     </main>
     <!--Footer-->
     <footer class="col-12">

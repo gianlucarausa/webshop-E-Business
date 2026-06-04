@@ -10,6 +10,7 @@
             <!--Datenbank API (Login / Warenkorb)-->
             <div id="buttons" class="text-white col-4 pe-4 d-flex justify-content-end">
                 <?php
+                include("../includes/session_check.php");
                 if(isLoggedIn()){
                     echo '<a href="logout.php" class="text-white btn">Logout <i class="fs-5 bi bi-box-arrow-in-right"></i></a>';
                 }else{  

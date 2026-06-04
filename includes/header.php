@@ -6,6 +6,23 @@
                         <h2>Tritschler Webservices</h2>
                         <i>est. 2026</i>
                     </div>
+                    <div class="col-4 d-flex justify-content-center">
+                        <?php
+                        if(isLoggedIn()){
+                           $userId = $_SESSION['user_id'];
+                           $username = "";
+                           include("../webshop/config/db.php");
+                          $sql = "SELECT vorname FROM Kunde WHERE id = ?";
+                          $statement = $mysqli->prepare($sql);
+                          $statement->bind_param("i", $userId);
+                          $statement->execute();
+                          $result = $statement->get_result();
+                          $row = $result->fetch_object();
+                          $username = $row->vorname;
+                          echo("<h3>Hallo $username !</h3>");
+                        }
+                        ?>
+                    </div>
             </div>
             <!--Datenbank API (Login / Warenkorb)-->
             <div id="buttons" class="text-white col-4 pe-4 d-flex justify-content-end">

@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_SESSION['last_activity'])){
         if(time()-$_SESSION['last_activity']>600){
-            session_destroy();
+            header('location: ../pages/logout.php');
         }
 }
 

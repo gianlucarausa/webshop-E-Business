@@ -1,29 +1,21 @@
 <header>
         <div id="head" class="col-12 py-4 d-flex bg-danger text-white align-items-center">
-            <div class="col-8 ps-4 d-inline-flex align-items-center">
+            <div class="col-4 ps-4 d-inline-flex align-items-center">
                 <image src="../webshop/images/logo.png" height="100px">
                     <div class="p-4">
                         <h2>Tritschler Webservices</h2>
                         <i>est. 2026</i>
                     </div>
-                    <div class="col-4 d-flex justify-content-center">
+            </div>
+            <div class="col-4 d-flex justify-content-center">
                         <?php
                         if(isLoggedIn()){
-                           $userId = $_SESSION['user_id'];
-                           $username = "";
-                           include("../webshop/config/db.php");
-                          $sql = "SELECT vorname FROM Kunde WHERE id = ?";
-                          $statement = $mysqli->prepare($sql);
-                          $statement->bind_param("i", $userId);
-                          $statement->execute();
-                          $result = $statement->get_result();
-                          $row = $result->fetch_object();
-                          $username = $row->vorname;
+                          $username = $_SESSION['username'];
                           echo("<h3>Hallo $username !</h3>");
                         }
                         ?>
-                    </div>
             </div>
+            
             <!--Datenbank API (Login / Warenkorb)-->
             <div id="buttons" class="text-white col-4 pe-4 d-flex justify-content-end">
                 <?php

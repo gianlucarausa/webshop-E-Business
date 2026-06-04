@@ -27,15 +27,15 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="category.php?category=2">Zu Essen</a></li>
-                                <li><a class="dropdown-item" href="#">- Pasta</a></li>
-                                <li><a class="dropdown-item" href="#">- Pizza</a></li>
+                                <li><a class="dropdown-item" href="category.php?category=1">Zu Trinken</a></li>
+                                <li><a class="dropdown-item" href="category.php?category=3">- Mate</a></li>
+                                <li><a class="dropdown-item" href="category.php?category=4">- Kaffee</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="category.php?category=1">Zu Trinken</a></li>
-                                <li><a class="dropdown-item" href="#">- Mate</a></li>
-                                <li><a class="dropdown-item" href="#">- Kaffee</a></li>
+                                <li><a class="dropdown-item" href="category.php?category=2">Zu Essen</a></li>
+                                <li><a class="dropdown-item" href="category.php?category=5">- Pizza</a></li>
+                                <li><a class="dropdown-item" href="category.php?category=6">- Pasta</a></li>
                             </ul>
                         </div>
                     </li>

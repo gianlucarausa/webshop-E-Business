@@ -1,17 +1,37 @@
 <?php 
 include("../webshop/config/db.php");
+$type = "";
+$category = "";
+$categoryTitel = "";
 if(isset($_GET['category'])){
     if($_GET['category'] == "all"){
     $categoryTitel = "Gesamte Karte";
-    $category = "Kategorie"; //das ist um später einfach einen Select * From Kategorie machen zu können
+    $category = "Kategorie";
     } else if($_GET['category'] == 1){
+        $type = "parent";
         $categoryTitel = "Zu Trinken";
         $category = $_GET['category'];
     } else if($_GET['category'] == 2 ){
+        $type = "parent";
         $categoryTitel = "Zu Essen";
         $category = $_GET['category'];
+    } else if($_GET['category'] == 3){
+        $type = "child";
+        $categoryTitel = "Mate";
+        $category = $_GET['category'];
+    } else if($_GET['category'] == 4){
+        $type = "child";
+        $categoryTitel = "Kaffee";
+        $category = $_GET['category'];
+    } else if($_GET['category'] == 5){
+        $type = "child";
+        $categoryTitel = "Pizza";
+        $category = $_GET['category'];
+    } else if($_GET['category'] == 6){
+        $type = "child";
+        $categoryTitel = "Pasta";
+        $category = $_GET['category'];
     }
-    
 }
 ?>
 
@@ -44,13 +64,26 @@ if(isset($_GET['category'])){
     <main class="col-12 bg-light">
         <?php 
         include("../webshop/config/db.php");
-        $sql = "Select * From Produkt";
-        $statement = $mysqli->prepare($sql);
+        
+        if($type == "parent"){
+            $sql = "Select * From Produkt p, Kategorie k WHERE k.parentid = ? and p.kategorieid = k.id";
+            $statement = $mysqli->prepare($sql);
+            $statement->bind_param("i", $category);
+        }else if($type == "child"){
+            $sql = "SELECT * FROM Produkt p, Kategorie k WHERE p.kategorieid = k.id AND k.id = ?";
+            $statement = $mysqli->prepare($sql);
+            $statement->bind_param("i", $category);
+        }else{
+            $sql = "Select * From Produkt";
+            $statement = $mysqli->prepare($sql);
+        }
+        
+       
         $statement-> execute();
         $result = $statement->get_result();
 
         while($row = $result->fetch_object()){
-        echo("<a>".$row->bezeichnung."<a/>");
+        echo("<a>".$row->bezeichnung."<br><a/>");
         }
 
     ?>

@@ -90,7 +90,10 @@ if(isset($_GET['category'])){
                     <h4 class=\"card-title\">$row->bezeichnung</h4>
                     <p class=\"card-text\">$row->beschreibung</p>
                     <p class=\"card-text\">$row->preis €</p>
-                    <a href=\"cart.php\" class=\"btn btn-danger\">Zum Warenkorb hinzufügen</a>
+                    <form action=\"addToCart.php\" method=\"POST\">
+                        <input type=\"hidden\" name=\"productId\" value=\"$row->id\">
+                        <button type=\"submit\" class=\"btn btn-danger btn-lg\">Zum Warenkorb</button>
+                    <form>
                 </div>
             </div>");
         }

@@ -16,7 +16,9 @@
     $statement->bind_param("ii", $kundId, $prodId);
     if(!$statement->execute()) {
         print("Query fehlgeschlagen: ".$statement->error);
-    } else {
+    } else if($category == "index"){
+        header("location: ./index.php");
+    }else {
         header("location: ./category.php?category=$category");
     }
         

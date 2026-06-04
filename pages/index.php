@@ -1,5 +1,6 @@
 <?php
     include '../includes/session_check.php';
+    $_SESSION['category'] = "index";
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +47,7 @@
                         <input type=\"hidden\" name=\"productId\" value=\"$row->id\">
                         <a>$row->id</a>
                         <button type=\"submit\" class=\"btn btn-danger btn-lg\">Zum Warenkorb hinzufügen</button>
-                    <form>
+                    </form>
                 </div>
             </div>");
         }

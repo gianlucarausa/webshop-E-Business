@@ -43,7 +43,7 @@
                                 Unsere Karte
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Gesamte Karte</a></li>
+                                <li><a class="dropdown-item" href="category.php">Gesamte Karte</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

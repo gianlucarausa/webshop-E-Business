@@ -61,7 +61,7 @@ INSERT IGNORE INTO Produkt VALUES(5, 4,'Gauss-Kaffee Cappuchino 220ml','Der Kaff
 INSERT IGNORE INTO Produkt VALUES(6, 4,'Gauss-Kaffee Wiener Melange 220ml','Dosenkaffee wie in den Kaffeehaeusern der Metropole an der Donau','../images/#', 4.80);
 --Pizza
 INSERT IGNORE INTO Produkt VALUES(7, 5,'Butter-Chicken-Pizza','Indisches Butter-Chicken kombiniert mit einer Pizza','../images/#', 8.50);
-INSERT IGNORE INTO Produkt VALUES(8, 5,'Schinkenpizza','Feinste Pizza Speziale nach Rezeptur aus Italien','../images/#', 9.00);
+INSERT IGNORE INTO Produkt VALUES(8, 5,'Schinkenpizza','Feinste Pizza Speziale nach Rezeptur aus Italien - evtl. verfeinert mit Annanas','../images/#', 9.00);
 INSERT IGNORE INTO Produkt VALUES(9, 5,'Spargelpizza','Exklusiv zur Spargelzeit - mit viel Hollondaise','../images/#', 12.50);
 --Pasta
 INSERT IGNORE INTO Produkt VALUES(10, 6,'Spaghetti alio e olio','Spaghetti mit Olivenoel und fein geschnittenem Knoblauch','../images/#', 9.00);

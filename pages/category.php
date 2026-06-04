@@ -80,11 +80,20 @@ if(isset($_GET['category'])){
        
         $statement-> execute();
         $result = $statement->get_result();
-
+        
+        echo('<div class="d-flex flex-wrap">');
         while($row = $result->fetch_object()){
-        echo("<a>".$row->bezeichnung."<br><a/>");
+        echo("<div class=\"card\" style=\"width:400px\">
+                <img class=\"card-img-top\" src=\"$row->bild\" alt=\"Card image\">
+                <div class=\"card-body\">
+                    <h4 class=\"card-title\">$row->bezeichnung</h4>
+                    <p class=\"card-text\">$row->beschreibung</p>
+                    <p class=\"card-text\">$row->preis €</p>
+                    <a href=\"cart.php\" class=\"btn btn-danger\">Zum Warenkorb hinzufügen</a>
+                </div>
+            </div>");
         }
-
+        echo('</div>');
     ?>
     </main>
     <!--Footer-->

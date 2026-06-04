@@ -52,18 +52,18 @@ INSERT IGNORE INTO Kategorie VALUES (6, 2, 'Pasta');
 
 -- Insert Befehle Produkt
 -- Mate
-INSERT IGNORE INTO Produkt VALUES(1, 3,'Matritzen Mate Aschenbecher 330ml','Sehr erfrischend gerade an stressigen Tagen','../images/mm_ka2.jpg', 3.25);
-INSERT IGNORE INTO Produkt VALUES(2, 3,'Matritzen Mate Original 330ml','Die altbewaehrte Originalrezeptur mit feinsten Mateblaettern aus Suedamerika','../images/mm_original2.jpg', 3.00);
-INSERT IGNORE INTO Produkt VALUES(3, 3,'Matritzen Mate Summeredition 330ml','Ideal fuer heisse Sommertage<br>Am besten lauwarm','../images/mm_biotonne2.jpg', 3.50);
+INSERT IGNORE INTO Produkt VALUES(1, 3,'Matritzen Mate Aschenbecher 330ml','Sehr erfrischend gerade an stressigen Tagen','../webshop/images/mm_ka2.jpg', 3.25);
+INSERT IGNORE INTO Produkt VALUES(2, 3,'Matritzen Mate Original 330ml','Die altbewaehrte Originalrezeptur mit feinsten Mateblaettern aus Suedamerika','../webshop/images/mm_original2.jpg', 3.00);
+INSERT IGNORE INTO Produkt VALUES(3, 3,'Matritzen Mate Summeredition 330ml','Ideal fuer heisse Sommertage<br>Am besten lauwarm','../webshop/images/mm_biotonne2.jpg', 3.50);
 -- Kaffee
-INSERT IGNORE INTO Produkt VALUES(4, 4,'Gauss-Kaffee Original 220ml','Der originale Kaffee aus der Dose','../images/#', 4.00);
-INSERT IGNORE INTO Produkt VALUES(5, 4,'Gauss-Kaffee Cappuchino 220ml','Der Kaffee aus der Dose aufgeschäumt mit Milch aus der regionalen Landwirtschaft','../images/#', 4.50);
-INSERT IGNORE INTO Produkt VALUES(6, 4,'Gauss-Kaffee Wiener Melange 220ml','Dosenkaffee wie in den Kaffeehaeusern der Metropole an der Donau','../images/#', 4.80);
+INSERT IGNORE INTO Produkt VALUES(4, 4,'Gauss-Kaffee Original 220ml','Der originale Kaffee aus der Dose','../webshop/images/#', 4.00);
+INSERT IGNORE INTO Produkt VALUES(5, 4,'Gauss-Kaffee Cappuchino 220ml','Der Kaffee aus der Dose aufgeschäumt mit Milch aus der regionalen Landwirtschaft','../webshop/images/#', 4.50);
+INSERT IGNORE INTO Produkt VALUES(6, 4,'Gauss-Kaffee Wiener Melange 220ml','Dosenkaffee wie in den Kaffeehaeusern der Metropole an der Donau','../webshop/images/#', 4.80);
 -- Pizza
-INSERT IGNORE INTO Produkt VALUES(7, 5,'Butter-Chicken-Pizza','Indisches Butter-Chicken kombiniert mit einer Pizza','../images/#', 8.50);
-INSERT IGNORE INTO Produkt VALUES(8, 5,'Schinkenpizza','Feinste Pizza Speziale nach Rezeptur aus Italien - evtl. verfeinert mit Annanas','../images/#', 9.00);
-INSERT IGNORE INTO Produkt VALUES(9, 5,'Spargelpizza','Exklusiv zur Spargelzeit - mit viel Hollondaise','../images/#', 12.50);
+INSERT IGNORE INTO Produkt VALUES(7, 5,'Butter-Chicken-Pizza','Indisches Butter-Chicken kombiniert mit einer Pizza','../webshop/images/#', 8.50);
+INSERT IGNORE INTO Produkt VALUES(8, 5,'Schinkenpizza','Feinste Pizza Speziale nach Rezeptur aus Italien - evtl. verfeinert mit Annanas','../webshop/images/#', 9.00);
+INSERT IGNORE INTO Produkt VALUES(9, 5,'Spargelpizza','Exklusiv zur Spargelzeit - mit viel Hollondaise','../webshop/images/#', 12.50);
 -- Pasta
-INSERT IGNORE INTO Produkt VALUES(10, 6,'Spaghetti alio e olio','Spaghetti mit Olivenoel und fein geschnittenem Knoblauch','../images/#', 9.00);
-INSERT IGNORE INTO Produkt VALUES(11, 6,'Spaghetti Carbonara','Spaghetti mit Pecorino und Ei - evtl. mit Creme Fraiche gestreckt','../images/#', 11.90);
-INSERT IGNORE INTO Produkt VALUES(12, 6,'Lasagne','Selbstgemacht und geschichtet mit hoechster Praezession','../images/#', 12.90);
+INSERT IGNORE INTO Produkt VALUES(10, 6,'Spaghetti alio e olio','Spaghetti mit Olivenoel und fein geschnittenem Knoblauch','../webshop/images/#', 9.00);
+INSERT IGNORE INTO Produkt VALUES(11, 6,'Spaghetti Carbonara','Spaghetti mit Pecorino und Ei - evtl. mit Creme Fraiche gestreckt','../webshop/images/#', 11.90);
+INSERT IGNORE INTO Produkt VALUES(12, 6,'Lasagne','Selbstgemacht und geschichtet mit hoechster Praezession','../webshop/images/#', 12.90);

@@ -28,7 +28,28 @@
     <!--Main-->
     <main class="col-12 bg-light">
         <?php 
-        echo("<H1>Hallo Welt!</H1>");
+        include("../webshop/config/db.php");
+        $sql = "Select * From Produkt";
+        $statement = $mysqli->prepare($sql);
+        $statement-> execute();
+        $result = $statement->get_result();
+        
+        echo('<div class="d-flex flex-wrap">');
+        while($row = $result->fetch_object()){
+        echo("<div class=\"card\" style=\"width:400px\">
+                <img class=\"card-img-top\" src=\"$row->bild\" alt=\"Card image\">
+                <div class=\"card-body\">
+                    <h4 class=\"card-title\">$row->bezeichnung</h4>
+                    <p class=\"card-text\">$row->beschreibung</p>
+                    <p class=\"card-text\">$row->preis €</p>
+                    <form action=\"addToCart.php\" method=\"POST\">
+                        <input type=\"hidden\" name=\"productId\" value=\"$row->id\">
+                        <button type=\"submit\" class=\"btn btn-danger btn-lg\">Zum Warenkorb hinzufügen</button>
+                    <form>
+                </div>
+            </div>");
+        }
+        echo('</div>');
         ?>
     </main>
     <!--Footer-->

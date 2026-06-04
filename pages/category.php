@@ -1,5 +1,4 @@
 <?php 
-include("../webshop/config/db.php");
 $type = "";
 $category = "";
 $categoryTitel = "";

@@ -18,7 +18,9 @@
 
 <body class="d-flex flex-column">
     <!--Header-->
-    
+    <?php
+    include("../includes/header.php");
+    ?>
     <!--Main-->
     <main class="col-12 bg-light">
         <?php 

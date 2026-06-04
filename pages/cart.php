@@ -34,7 +34,7 @@
         include '../webshop/config/db.php';
 
         $username = $_SESSION["username"];
-        $userId = $_SESSION["id"];
+        $userId = $_SESSION["user_id"];
 
         print("<h2>Willkommen im Warenkorb " . $username ."</h2><br><p>Artikel im Warenkorb</p>");
 

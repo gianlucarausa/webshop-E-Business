@@ -9,7 +9,14 @@
             </div>
             <!--Datenbank API (Login / Warenkorb)-->
             <div id="buttons" class="text-white col-4 pe-4 d-flex justify-content-end">
-                <button class="text-white btn">Login <i class="fs-5 bi bi-box-arrow-in-right"></i></button>
+                <?php
+                if(isLoggedIn()){
+                    echo '<a href="logout.php" class="text-white btn">Logout <i class="fs-5 bi bi-box-arrow-in-right"></i></a>';
+                }else{  
+                     echo '<a href="register.php" class="text-white btn">Registrieren <i class="fs-5 bi bi-box-arrow-in-right"></i></a>';
+                     echo '<a href="login.php" class="text-white btn">Login <i class="fs-5 bi bi-box-arrow-in-right"></i></a>';
+                }
+                ?>
                 <a class="text-white btn" href="cart.php">Warenkorb <i class="fs-5 bi bi-cart2"></i></a>
             </div>
         </div>

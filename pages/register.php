@@ -3,6 +3,7 @@ $error = null;
 
 
 include '../webshop/config/db.php';
+include_once __DIR__ . '/../includes/session_check.php';
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -49,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     if($statement->execute()){
     
-    $sqlId="SELECT id FROM Kunde WHERE email = ?";
+    $sqlId="SELECT id, benutzername FROM Kunde WHERE email = ?";
     $idStatement = $mysqli->prepare($sqlId);
     $idStatement->bind_param('s', $email);
     $idStatement->execute();
@@ -59,6 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($anzahl ===1){
         $row = $result->fetch_assoc();
         $_SESSION['user_id'] = $row['id'];
+        $_SESSION['username'] = $row['benutzername'];
         header("Location: index.php");
         exit();
     }
@@ -104,9 +106,7 @@ include '../includes/header.php';
         <?php
 
             if($error){
-                echo('<div class="alert alert-warning" role="alert">
-                Benutzer existiert bereits!
-                </div>');
+                echo($error);
             }
 
         ?>
@@ -140,7 +140,10 @@ include '../includes/header.php';
             <label>Passwort</label> 
             <input class="form-control" type="password" name="passwort">
             <br>
-            <input class="btn btn-primary" type="submit" value="Registrieren">
+            <input style="margin-bottom: 80px;" class="btn btn-danger" type="submit" value="Registrieren">
+            <div>
+
+            </div>
         </form>
     </div>
 </div>

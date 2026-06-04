@@ -56,14 +56,14 @@ INSERT IGNORE INTO Produkt VALUES(1, 3,'Matritzen Mate Aschenbecher 330ml','Sehr
 INSERT IGNORE INTO Produkt VALUES(2, 3,'Matritzen Mate Original 330ml','Die altbewaehrte Originalrezeptur mit feinsten Mateblaettern aus Suedamerika','../webshop/images/mm_original2.jpg', 3.00);
 INSERT IGNORE INTO Produkt VALUES(3, 3,'Matritzen Mate Summeredition 330ml','Ideal fuer heisse Sommertage<br>Am besten lauwarm','../webshop/images/mm_biotonne2.jpg', 3.50);
 -- Kaffee
-INSERT IGNORE INTO Produkt VALUES(4, 4,'Gauss-Kaffee Original 220ml','Der originale Kaffee aus der Dose','../webshop/images/#', 4.00);
-INSERT IGNORE INTO Produkt VALUES(5, 4,'Gauss-Kaffee Cappuchino 220ml','Der Kaffee aus der Dose aufgeschäumt mit Milch aus der regionalen Landwirtschaft','../webshop/images/#', 4.50);
-INSERT IGNORE INTO Produkt VALUES(6, 4,'Gauss-Kaffee Wiener Melange 220ml','Dosenkaffee wie in den Kaffeehaeusern der Metropole an der Donau','../webshop/images/#', 4.80);
+INSERT IGNORE INTO Produkt VALUES(4, 4,'Gauss-Kaffee Original 220ml','Der originale Kaffee aus der Dose','../webshop/images/gk_original2.jpg', 4.00);
+INSERT IGNORE INTO Produkt VALUES(5, 4,'Gauss-Kaffee Cappuchino 220ml','Der Kaffee aus der Dose aufgeschäumt mit Milch aus der regionalen Landwirtschaft','../webshop/images/gk_cappuchino2.jpg', 4.50);
+INSERT IGNORE INTO Produkt VALUES(6, 4,'Gauss-Kaffee Wiener Melange 220ml','Dosenkaffee wie in den Kaffeehaeusern der Metropole an der Donau','../webshop/images/gk_melange2.jpg', 4.80);
 -- Pizza
-INSERT IGNORE INTO Produkt VALUES(7, 5,'Butter-Chicken-Pizza','Indisches Butter-Chicken kombiniert mit einer Pizza','../webshop/images/#', 8.50);
-INSERT IGNORE INTO Produkt VALUES(8, 5,'Schinkenpizza','Feinste Pizza Speziale nach Rezeptur aus Italien - evtl. verfeinert mit Annanas','../webshop/images/#', 9.00);
-INSERT IGNORE INTO Produkt VALUES(9, 5,'Spargelpizza','Exklusiv zur Spargelzeit - mit viel Hollondaise','../webshop/images/#', 12.50);
+INSERT IGNORE INTO Produkt VALUES(7, 5,'Butter-Chicken-Pizza','Indisches Butter-Chicken kombiniert mit einer Pizza','../webshop/images/pz_chicken2.jpg', 8.50);
+INSERT IGNORE INTO Produkt VALUES(8, 5,'Schinkenpizza','Feinste Pizza Speziale nach Rezeptur aus Italien - evtl. verfeinert mit Annanas','../webshop/images/pz_speziale2.jpg', 9.00);
+INSERT IGNORE INTO Produkt VALUES(9, 5,'Spargelpizza','Exklusiv zur Spargelzeit - mit viel Hollondaise','../webshop/images/pz_spargel2.jpg', 12.50);
 -- Pasta
-INSERT IGNORE INTO Produkt VALUES(10, 6,'Spaghetti alio e olio','Spaghetti mit Olivenoel und fein geschnittenem Knoblauch','../webshop/images/#', 9.00);
-INSERT IGNORE INTO Produkt VALUES(11, 6,'Spaghetti Carbonara','Spaghetti mit Pecorino und Ei - evtl. mit Creme Fraiche gestreckt','../webshop/images/#', 11.90);
-INSERT IGNORE INTO Produkt VALUES(12, 6,'Lasagne','Selbstgemacht und geschichtet mit hoechster Praezession','../webshop/images/#', 12.90);
+INSERT IGNORE INTO Produkt VALUES(10, 6,'Spaghetti alio e olio','Spaghetti mit Olivenoel und fein geschnittenem Knoblauch','../webshop/images/pa_alio2.jpg', 9.00);
+INSERT IGNORE INTO Produkt VALUES(11, 6,'Spaghetti Carbonara','Spaghetti mit Pecorino und Ei - evtl. mit Creme Fraiche gestreckt','../webshop/images/pa_carbonara2.jpg', 11.90);
+INSERT IGNORE INTO Produkt VALUES(12, 6,'Lasagne','Selbstgemacht und geschichtet mit hoechster Praezession','../webshop/images/pa_lasagne2.jpg', 12.90);

@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <title>Home | Tritschler Webservices</title>
+    <title>Suche | Tritschler Webservices</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP-Webshop für Essen mit hoher Qualitaet">
@@ -16,7 +16,7 @@
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!--Favicon-->
-    <link rel="icon" type="image/png" href="./images/fav2.png">
+    <link rel="icon" type="image/png" href="../webshop/images/fav2.png">
 </head>
 
 <body class="d-flex flex-column">

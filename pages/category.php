@@ -53,7 +53,7 @@ $_SESSION['category'] = $category;
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!--Favicon-->
-    <link rel="icon" type="image/png" href="./images/fav2.png">
+    <link rel="icon" type="image/png" href="../webshop/images/fav2.png">
 </head>
 
 <body class="d-flex flex-column">

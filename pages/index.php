@@ -33,7 +33,7 @@
         $statement = $mysqli->prepare($sql);
         $statement-> execute();
         $result = $statement->get_result();
-        
+
         echo('<div class="d-flex flex-wrap">');
         while($row = $result->fetch_object()){
         echo("<div class=\"card\" style=\"width:400px\">
@@ -44,6 +44,7 @@
                     <p class=\"card-text\">$row->preis €</p>
                     <form action=\"addToCart.php\" method=\"POST\">
                         <input type=\"hidden\" name=\"productId\" value=\"$row->id\">
+                        <a>$row->id</a>
                         <button type=\"submit\" class=\"btn btn-danger btn-lg\">Zum Warenkorb hinzufügen</button>
                     <form>
                 </div>

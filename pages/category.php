@@ -66,11 +66,11 @@ if(isset($_GET['category'])){
         include("../webshop/config/db.php");
         
         if($type == "parent"){
-            $sql = "Select * From Produkt p, Kategorie k WHERE k.parentid = ? and p.kategorieid = k.id";
+            $sql = "Select p.id, p.bezeichnung, p.beschreibung, p.bezeichnung, p.preis, p.bild From Produkt p, Kategorie k WHERE k.parentid = ? and p.kategorieid = k.id";
             $statement = $mysqli->prepare($sql);
             $statement->bind_param("i", $category);
         }else if($type == "child"){
-            $sql = "SELECT * FROM Produkt p, Kategorie k WHERE p.kategorieid = k.id AND k.id = ?";
+            $sql = "Select p.id, p.bezeichnung, p.beschreibung, p.bezeichnung, p.preis, p.bild FROM Produkt p, Kategorie k WHERE p.kategorieid = k.id AND k.id = ?";
             $statement = $mysqli->prepare($sql);
             $statement->bind_param("i", $category);
         }else{
@@ -92,6 +92,7 @@ if(isset($_GET['category'])){
                     <p class=\"card-text\">$row->preis €</p>
                     <form action=\"addToCart.php\" method=\"POST\">
                         <input type=\"hidden\" name=\"productId\" value=\"$row->id\">
+                        <a>$row->id</a>
                         <button type=\"submit\" class=\"btn btn-danger btn-lg\">Zum Warenkorb hinzufügen</button>
                     <form>
                 </div>

@@ -3,7 +3,7 @@
     include '../webshop/config/db.php';
 
     if(!isLoggedIn()) {
-        header("location: ./index.php");
+        header("location: ./login.php");
     }
 
     $kundId= $_SESSION["user_id"];

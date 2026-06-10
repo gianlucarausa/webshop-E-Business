@@ -2,7 +2,7 @@
     include "../includes/session_check.php";
 
     if(!isLoggedIn()) {
-        header("location: ./index.php");
+        header("location: ./login.php");
     }
 ?>
 <!DOCTYPE html>

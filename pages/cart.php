@@ -44,7 +44,7 @@
         $result = $statement->get_result();
         
         print("<div class=\"container p-3\">");
-        print("<h2>Willkommen im Warenkorb " . $username ."</h2><br><p>Artikel im Warenkorb</p>");
+        print("<h2>Willkommen im Warenkorb " . $username ."</h2><br><p>Artikel im Warenkorb:</p>");
         print("<table class=\"table table-hover\">");
         print("<tr>");
         print("<th class=\"table-secondary\">Anzahl</th>");
@@ -71,12 +71,18 @@
         }
 
         print("</table>");
-        print('<nav class="navbar navbar-expand-sm justify-content-center"><form action="./index.php" method="GET">
+        print('<nav class="navbar navbar-expand-sm justify-content-center">
+                <form action="./index.php" method="GET">
+                    <div class="pe-3">
                     <button type="submit" class="btn btn-secondary btn-sm">Weiter Einkaufen</button>
+                    </div>
                 </form>
                 <form action="./payment.php" method="GET">
+                    <div class="ps-3">
                     <button type="submit" class="btn btn-primary btn-lg">Zu PayPal</button>
-                </form></nav>');
+                    </div
+                </form>
+                </nav>');
         print("</div");  
         ?>
 

@@ -3,7 +3,7 @@ $error = null;
 
 
 include '../webshop/config/db.php';
-include_once __DIR__ . '/../includes/session_check.php';
+include '../includes/session_check.php';
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -26,7 +26,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $checkAnzahl = $checkResult->num_rows;
     
     if($checkAnzahl >0){
-        $error = "Benutzer oder Email existiert bereits!";
+        $error = '
+            <div class="alert alert-warning" role="alert">
+            Benutzer ist bereits angelegt!
+            </div>
+        ';
         
     } 
     else {
@@ -65,7 +69,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit();
     }
     }else{
-        $error = "Fehler bei der Registrierung!";
+        $error = '
+            <div class="alert alert-danger" role="alert">
+            Fehler bei der Registrierung!
+            </div>
+        ';
     }
     }
 }
@@ -123,7 +131,7 @@ include '../includes/header.php';
             <input class="form-control" type="text" name="name"><br>
 
             <label>Email</label>
-            <input class="form-control" type="text" name="email"><br>
+            <input class="form-control" type="email" name="email"><br>
 
             <label>Ort </label>
             <input class="form-control" type="text" name="ort"><br>
@@ -139,6 +147,7 @@ include '../includes/header.php';
                         
             <label>Passwort</label> 
             <input class="form-control" type="password" name="passwort">
+            
             <br>
             <input style="margin-bottom: 80px;" class="btn btn-danger" type="submit" value="Registrieren">
             <div>

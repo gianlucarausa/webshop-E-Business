@@ -1,7 +1,7 @@
 <header>
         <div id="head" class="col-12 py-4 d-flex bg-danger text-white align-items-center">
             <div class="col-4 ps-4 d-inline-flex align-items-center">
-                <image src="../webshop/images/logo.png" height="100px">
+                <a href="./index.php"><image src="../webshop/images/logo.png" height="100px"></a>
                     <div class="p-4">
                         <h2>Tritschler Webservices</h2>
                         <i>est. 2026</i>

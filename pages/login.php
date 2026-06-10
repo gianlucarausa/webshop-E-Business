@@ -67,7 +67,7 @@
             }
 
         ?>
-        <h3>Komm rein können Sie raus schauen!</h3>
+        <h3>melden Sie sich an!</h3>
         <br>
         <form method="post">
             <label>Benutzername oder Email </label> 

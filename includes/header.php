@@ -54,6 +54,12 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <form class="d-flex" action="./search.php" method="GET">
+                            <input class="form-control me-2" type="text" name="search" placeholder="Suche">
+                            <button class="btn btn-secondary" type="submit">Suche</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>

@@ -9,7 +9,7 @@
 <html lang="en">
 
 <head>
-    <title>Home | Tritschler Webservices</title>
+    <title>Warenkorb | Tritschler Webservices</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP-Webshop für Essen mit hoher Qualitaet">
@@ -20,7 +20,7 @@
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!--Favicon-->
-    <link rel="icon" type="image/png" href="./images/fav2.png">
+    <link rel="icon" type="image/png" href="../webshop/images/fav2.png">
 </head>
 
 <body class="d-flex flex-column">
@@ -36,19 +36,21 @@
         $username = $_SESSION["username"];
         $userId = $_SESSION["user_id"];
 
-        print("<h2>Willkommen im Warenkorb " . $username ."</h2><br><p>Artikel im Warenkorb</p>");
-
+        
         $query = "SELECT p.bezeichnung, p.preis, w.id FROM Warenkorb w, Produkt p WHERE w.kundeid=? AND w.produktid = p.id ORDER BY w.id";
         $statement = $mysqli->prepare($query);
         $statement->bind_param("i", $userId);
         $statement->execute();
         $result = $statement->get_result();
-
-        print("<table>");
+        
+        print("<div class=\"container p-3\">");
+        print("<h2>Willkommen im Warenkorb " . $username ."</h2><br><p>Artikel im Warenkorb</p>");
+        print("<table class=\"table table-hover\">");
         print("<tr>");
-        print("<th>Anzahl</th>");
-        print("<th>Artikel</th>");
-        print("<th>Preis</th>");
+        print("<th class=\"table-secondary\">Anzahl</th>");
+        print("<th class=\"table-secondary\">Artikel</th>");
+        print("<th class=\"table-secondary\">Preis</th>");
+        print("<th class=\"table-secondary\">Artikel verwalten</th>");
         print("</tr>");
 
         while ($row = $result->fetch_object()) {
@@ -62,19 +64,20 @@
             print("</td>");
             print("<td>");
             print("<form action=\"./deleteFromCart.php\" method=\"POST\">
-                    <button type=\"submit\" name=\"cart_id\" value=\"$row->id\" class=\"btn btn-danger btn-lg\">x</button>
+                    <button type=\"submit\" name=\"cart_id\" value=\"$row->id\" class=\"btn btn-danger btn-sm\">Entfernen</button>
                 </form>");
             print("</td>");
             print("</tr>"); 
         }
 
         print("</table>");
-        print('<form action="./index.php" method="GET">
+        print('<nav class="navbar navbar-expand-sm justify-content-center"><form action="./index.php" method="GET">
                     <button type="submit" class="btn btn-secondary btn-sm">Weiter Einkaufen</button>
                 </form>
                 <form action="./payment.php" method="GET">
-                    <button type="submit" class="btn btn-success btn-lg">Bezahlen</button>
-                </form>')  
+                    <button type="submit" class="btn btn-primary btn-lg">Zu PayPal</button>
+                </form></nav>');
+        print("</div");  
         ?>
 
     </main>

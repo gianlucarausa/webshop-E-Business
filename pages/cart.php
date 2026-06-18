@@ -1,9 +1,9 @@
 <?php
-    include "../includes/session_check.php";
+include "../includes/session_check.php";
 
-    if(!isLoggedIn()) {
-        header("location: ./login.php");
-    }
+if (!isLoggedIn()) {
+    header("location: ./login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +26,22 @@
 <body class="d-flex flex-column">
     <!--Header-->
     <?php
-        include "../includes/header.php";
+    include "../includes/header.php";
     ?>
     <!--Main-->
     <main class="col-12 bg-light">
         <?php
         include '../webshop/config/db.php';
 
+        define('PAYPAL_SANDBOX', TRUE);
+        define('PAYPAL_URL', (PAYPAL_SANDBOX == true) ? "https://www.sandbox.paypal.com/cgi-bin/webscr" : "https://www.paypal.com/cgi-bin/webscr");
+        $sum = 0;
+
+
         $username = $_SESSION["username"];
         $userId = $_SESSION["user_id"];
 
-        
+
         $query = "SELECT p.bezeichnung, p.preis, w.id FROM Warenkorb w, Produkt p WHERE w.kundeid=? AND w.produktid = p.id ORDER BY w.id";
         $statement = $mysqli->prepare($query);
         $statement->bind_param("i", $userId);
@@ -54,36 +59,44 @@
         print("</tr>");
 
         while ($row = $result->fetch_object()) {
-            print("<tr>");
-            print("<td>1x</td>");
-            print("<td>");
-            print($row->bezeichnung);
-            print("</td>");
-            print("<td>");
-            print($row->preis." €");
-            print("</td>");
-            print("<td>");
-            print("<form action=\"./deleteFromCart.php\" method=\"POST\">
+            $sum += $row->preis;
+            print ("<tr>");
+            print ("<td>1x</td>");
+            print ("<td>");
+            print ($row->bezeichnung);
+            print ("</td>");
+            print ("<td>");
+            print ($row->preis . " €");
+            print ("</td>");
+            print ("<td>");
+            print ("<form action=\"./deleteFromCart.php\" method=\"POST\">
                     <button type=\"submit\" name=\"cart_id\" value=\"$row->id\" class=\"btn btn-danger btn-sm\">Entfernen</button>
                 </form>");
-            print("</td>");
-            print("</tr>"); 
+            print ("</td>");
+            print ("</tr>");
         }
 
-        print("</table>");
-        print('<nav class="navbar navbar-expand-sm justify-content-center">
+        print ("</table>");
+        print ('
+            <nav class="navbar navbar-expand-sm justify-content-center">
                 <form action="./index.php" method="GET">
-                    <div class="pe-3">
                     <button type="submit" class="btn btn-secondary btn-sm">Weiter Einkaufen</button>
                     </div>
                 </form>
-                <form action="./payment.php" method="GET">
-                    <div class="ps-3">
-                    <button type="submit" class="btn btn-primary btn-lg">Zu PayPal</button>
-                    </div
+                <form action="' . PAYPAL_URL . '" method="post">
+                    <input type="hidden" name="business" value="schlager.seller@hs-offenburg.de">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="item_name" value="Warenkorb">
+                    <input type="hidden" name="item_number" value="' . $userId . '">
+                    <input type="hidden" name="amount" value="' . $sum . '">
+                    <input type="hidden" name="currency_code" value="EUR">
+                    <input type="hidden" name="return" value="http://localhost:8080/pages/success.php">
+                    <input type="hidden" name="cancel_return" value="http://localhost:8080/pages/cancel.php">
+                    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif">
                 </form>
-                </nav>');
-        print("</div");  
+            </nav>
+            ');
+        print ("</div");
         ?>
 
     </main>

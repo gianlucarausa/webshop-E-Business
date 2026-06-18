@@ -81,7 +81,6 @@ if (!isLoggedIn()) {
             <nav class="navbar navbar-expand-sm justify-content-center">
                 <form action="./index.php" method="GET">
                     <button type="submit" class="btn btn-secondary btn-sm">Weiter Einkaufen</button>
-                    </div>
                 </form>
                 <form action="' . PAYPAL_URL . '" method="post">
                     <input type="hidden" name="business" value="schlager.seller@hs-offenburg.de">

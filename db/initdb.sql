@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS Einkauf (
     txnid INT NOT NULL,
     CONSTRAINT fk_kunde2 FOREIGN KEY (kundeid) REFERENCES Kunde(id)
 );
---<Platzhalter>
---INSERT INTO Einkauf (bezahlt, kundeid, txnid) VALUES (CURDATE(), <user_id>, <txnid>);
---Variable Maxid = SELECT max(id) FROM Einkauf WHERE kundeid = <user_id>;
+-- <Platzhalter>
+-- INSERT INTO Einkauf (bezahlt, kundeid, txnid) VALUES (CURDATE(), <user_id>, <txnid>);
+-- Variable Maxid = SELECT max(id) FROM Einkauf WHERE kundeid = <user_id>;
 
 CREATE TABLE IF NOT EXISTS Warenkorb (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS Warenkorb (
     CONSTRAINT fk_produkt FOREIGN KEY (produktid) REFERENCES Produkt(id),
     CONSTRAINT fk_einkauf FOREIGN KEY (einkaufid) REFERENCES Einkauf(id)
 );
---UPDATE Warenkorb SET einkaufid = <Maxid> WHERE kundeid = <user_id> AND einkaufid IS NULL;
+-- UPDATE Warenkorb SET einkaufid = <Maxid> WHERE kundeid = <user_id> AND einkaufid IS NULL;
 
 
 -- Insert Befehle Kategorie

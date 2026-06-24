@@ -45,7 +45,7 @@ if(!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) &
 
     $query = "INSERT INTO Einkauf (bezahlt, kundeid, txnid) VALUES (CURDATE(), ?, ?)";
     $statement = $mysqli->prepare($query);
-    $statement->bind_param("ii", $userId, $txn_id);
+    $statement->bind_param("is", $userId, $txn_id);
     $statement->execute();
 
 
@@ -74,7 +74,7 @@ if(!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) &
                     <h4>Payment Information</h4>
                     <p><b>Reference Number:</b> ' . $userId . '</p>
                     <p><b>Transaction ID:</b> ' . $txn_id . '</p>
-                    <p><b>Paid Amount:</b> ' . $payment_gross . '</p>
+                    <p><b>Paid Amount:</b> ' . $payment_gross . '€</p>
                     <p><b>Payment Status:</b> ' . $payment_status . '</p>
                 </div>
             </div>

@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Einkauf (
     id INT AUTO_INCREMENT PRIMARY KEY,
     bezahlt DATE NOT NULL,
     kundeid INT NOT NULL,
-    txnid INT NOT NULL,
+    txnid VARCHAR(200) NOT NULL,
     CONSTRAINT fk_kunde2 FOREIGN KEY (kundeid) REFERENCES Kunde(id)
 );
 -- <Platzhalter>
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Warenkorb (
     id INT AUTO_INCREMENT PRIMARY KEY,
     kundeid INT NOT NULL,
     produktid INT NOT NULL,
-    einkaufid VARCHAR(200),
+    einkaufid INT,
     CONSTRAINT fk_kunde FOREIGN KEY (kundeid) REFERENCES Kunde(id),
     CONSTRAINT fk_produkt FOREIGN KEY (produktid) REFERENCES Produkt(id),
     CONSTRAINT fk_einkauf FOREIGN KEY (einkaufid) REFERENCES Einkauf(id)

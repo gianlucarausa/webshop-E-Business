@@ -37,7 +37,7 @@
 
         echo('<div class="d-flex flex-wrap">');
         while($row = $result->fetch_object()){
-        echo("<div class=\"card\" style=\"width:400px\">
+        echo("<div class=\"card p-1\" style=\"width:25vw\">
                 <img class=\"card-img-top\" src=\"$row->bild\" alt=\"Card image\">
                 <div class=\"card-body\">
                     <h4 class=\"card-title\">$row->bezeichnung</h4>

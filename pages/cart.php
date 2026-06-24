@@ -42,7 +42,7 @@ if (!isLoggedIn()) {
         $userId = $_SESSION["user_id"];
 
 
-        $query = "SELECT p.bezeichnung, p.preis, w.id FROM Warenkorb w, Produkt p WHERE w.kundeid=? AND w.produktid = p.id ORDER BY w.id";
+        $query = "SELECT p.bezeichnung, p.preis, w.id FROM Warenkorb w, Produkt p WHERE w.kundeid=? AND w.produktid = p.id AND w.einkaufid IS NULL ORDER BY w.id";
         $statement = $mysqli->prepare($query);
         $statement->bind_param("i", $userId);
         $statement->execute();

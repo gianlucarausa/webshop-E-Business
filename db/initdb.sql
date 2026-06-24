@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Warenkorb (
     id INT AUTO_INCREMENT PRIMARY KEY,
     kundeid INT NOT NULL,
     produktid INT NOT NULL,
-    einkaufid INT,
+    einkaufid VARCHAR(200),
     CONSTRAINT fk_kunde FOREIGN KEY (kundeid) REFERENCES Kunde(id),
     CONSTRAINT fk_produkt FOREIGN KEY (produktid) REFERENCES Produkt(id),
     CONSTRAINT fk_einkauf FOREIGN KEY (einkaufid) REFERENCES Einkauf(id)
